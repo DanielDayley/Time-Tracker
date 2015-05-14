@@ -71,7 +71,7 @@
 }
 
 -(void) saveProjects {
-    NSMutableArray *array = @[];
+    NSMutableArray *array = [NSMutableArray new];
     
     for (Project *i in self.Projects) {
         NSDictionary *dictionary = [self ProjectAsDictionary:i];
@@ -82,7 +82,7 @@
 
 -(void) loadProject{
     NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"projects"];
-    NSMutableArray *projects = @[];
+    NSMutableArray *projects = [NSMutableArray new];
     
     for (NSDictionary *i in array) {
         Project *newProject = [self ProjectFromDictionary:i];

@@ -7,21 +7,57 @@
 //
 
 #import "DetailViewController.h"
+#import "DetailTableViewDataSource.h"
+#import "Project.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITableView *detailTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *checkInButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *checkOutButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *reportButton;
 
 @end
 
 @implementation DetailViewController
 
+-(instancetype)init {
+    self = [super init];
+    DetailTableViewDataSource *dataSource = [DetailTableViewDataSource  new];
+    self.dataSource = dataSource;
+    self.detailTableView.dataSource = self.dataSource;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+- (IBAction)titleTextFieldText:(id)sender {
+}
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.titleTextField resignFirstResponder];
+    return YES;
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    Project *newProject = [[Project alloc] init];
+    Entry *name;
+    name.Name = self.titleTextField.text;
+    [newProject AddEntry:name];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)addButtonPressed:(id)sender {
+}
+- (IBAction)checkInPressed:(id)sender {
+}
+- (IBAction)checkOutPressed:(id)sender {
+}
+- (IBAction)reportPressed:(id)sender {
 }
 
 /*

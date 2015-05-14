@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
+                <outlet property="addButton" destination="JFY-cN-UFV" id="V9w-eV-ecI"/>
+                <outlet property="checkInButton" destination="jBS-8b-HJz" id="OZT-ND-v7u"/>
+                <outlet property="checkOutButton" destination="EkR-bm-gIL" id="Fs5-E8-2T1"/>
+                <outlet property="detailTableView" destination="J0q-PA-UQz" id="Two-mc-EEl"/>
+                <outlet property="reportButton" destination="Axh-cE-iLQ" id="hcE-r4-meP"/>
+                <outlet property="titleTextField" destination="cib-A0-cYl" id="nTq-Jv-n2j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +21,68 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cib-A0-cYl">
+                    <rect key="frame" x="8" y="94" width="584" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="titleTextFieldText:" destination="-1" eventType="editingDidEnd" id="bmy-Y2-Isg"/>
+                        <outlet property="delegate" destination="-1" id="l9r-QG-UUF"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRf-kf-d0C">
+                    <rect key="frame" x="279" y="49" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J0q-PA-UQz">
+                    <rect key="frame" x="8" y="132" width="584" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="J0q-PA-UQz" secondAttribute="height" multiplier="146:75" id="VeA-kA-c2h"/>
+                    </constraints>
+                </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-lO-Red">
+                    <rect key="frame" x="0.0" y="432" width="600" height="44"/>
+                    <items>
+                        <barButtonItem systemItem="add" id="JFY-cN-UFV">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="-1" id="K13-8K-ADT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7X8-4e-iCg"/>
+                        <barButtonItem title="Check In" id="jBS-8b-HJz">
+                            <connections>
+                                <action selector="checkInPressed:" destination="-1" id="QLI-EQ-f1a"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="S9a-rp-g3z"/>
+                        <barButtonItem title="Check Out" id="EkR-bm-gIL">
+                            <connections>
+                                <action selector="checkOutPressed:" destination="-1" id="JyN-d2-SCy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="3kf-EI-MXl"/>
+                        <barButtonItem systemItem="action" id="Axh-cE-iLQ">
+                            <connections>
+                                <action selector="reportPressed:" destination="-1" id="5Ah-cR-4T8"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cib-A0-cYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="5XO-4r-wQE"/>
+                <constraint firstItem="J0q-PA-UQz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="6hh-gu-H4Q"/>
+                <constraint firstItem="J0q-PA-UQz" firstAttribute="top" secondItem="cib-A0-cYl" secondAttribute="bottom" constant="8" id="9Ab-Zz-YIM"/>
+                <constraint firstAttribute="centerX" secondItem="cib-A0-cYl" secondAttribute="centerX" id="J7F-CU-JGw"/>
+                <constraint firstAttribute="trailing" secondItem="cib-A0-cYl" secondAttribute="trailing" constant="8" id="JPC-O7-dLd"/>
+                <constraint firstAttribute="centerY" secondItem="cib-A0-cYl" secondAttribute="centerY" constant="191" id="OPP-Z5-s6z"/>
+                <constraint firstAttribute="trailing" secondItem="J0q-PA-UQz" secondAttribute="trailing" constant="8" id="ei1-ZO-Ls5"/>
+            </constraints>
         </view>
     </objects>
 </document>

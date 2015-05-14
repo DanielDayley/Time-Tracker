@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64D526891B0544F700B33497 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D526871B0544F700B33497 /* DetailViewController.m */; };
+		64D5268A1B0544F700B33497 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64D526881B0544F700B33497 /* DetailViewController.xib */; };
+		64D5268D1B054DE500B33497 /* DetailTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D5268C1B054DE500B33497 /* DetailTableViewDataSource.m */; };
 		7116F77619421700006C8F06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7116F77519421700006C8F06 /* Foundation.framework */; };
 		7116F77819421700006C8F06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7116F77719421700006C8F06 /* CoreGraphics.framework */; };
 		7116F77A19421700006C8F06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7116F77919421700006C8F06 /* UIKit.framework */; };
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64D526861B0544F700B33497 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		64D526871B0544F700B33497 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		64D526881B0544F700B33497 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		64D5268B1B054DE500B33497 /* DetailTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewDataSource.h; sourceTree = "<group>"; };
+		64D5268C1B054DE500B33497 /* DetailTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewDataSource.m; sourceTree = "<group>"; };
 		7116F77219421700006C8F06 /* Time-Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time-Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7116F77519421700006C8F06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7116F77719421700006C8F06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,12 +136,17 @@
 				7116F78519421700006C8F06 /* TTAppDelegate.m */,
 				D0DDA7121B052FDF002C0321 /* ListTableViewDatasource.h */,
 				D0DDA7131B052FDF002C0321 /* ListTableViewDatasource.m */,
+				64D5268B1B054DE500B33497 /* DetailTableViewDataSource.h */,
+				64D5268C1B054DE500B33497 /* DetailTableViewDataSource.m */,
 				D0DDA71B1B05357D002C0321 /* ProjectController.h */,
 				D0DDA71C1B05357D002C0321 /* ProjectController.m */,
 				D0DDA7181B0534A3002C0321 /* Entry.h */,
 				D0DDA7191B0534A3002C0321 /* Entry.m */,
 				D0DDA7151B053393002C0321 /* Project.h */,
 				D0DDA7161B053393002C0321 /* Project.m */,
+				64D526861B0544F700B33497 /* DetailViewController.h */,
+				64D526871B0544F700B33497 /* DetailViewController.m */,
+				64D526881B0544F700B33497 /* DetailViewController.xib */,
 				7116F78719421700006C8F06 /* Images.xcassets */,
 				7116F77C19421700006C8F06 /* Supporting Files */,
 			);
@@ -246,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7116F78019421700006C8F06 /* InfoPlist.strings in Resources */,
+				64D5268A1B0544F700B33497 /* DetailViewController.xib in Resources */,
 				7116F78819421700006C8F06 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +282,8 @@
 				D0DDA71A1B0534A3002C0321 /* Entry.m in Sources */,
 				7116F78619421700006C8F06 /* TTAppDelegate.m in Sources */,
 				7116F78219421700006C8F06 /* main.m in Sources */,
+				64D5268D1B054DE500B33497 /* DetailTableViewDataSource.m in Sources */,
+				64D526891B0544F700B33497 /* DetailViewController.m in Sources */,
 				D0DDA71D1B05357D002C0321 /* ProjectController.m in Sources */,
 				D0DDA7141B052FDF002C0321 /* ListTableViewDatasource.m in Sources */,
 				D0DDA7171B053393002C0321 /* Project.m in Sources */,
