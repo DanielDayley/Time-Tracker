@@ -7,6 +7,7 @@
 //
 
 #import "TTAppDelegate.h"
+#import "ListViewController.h"
 
 @implementation TTAppDelegate
 
@@ -16,6 +17,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self.window setRootViewController:[[UINavigationController alloc] initWithRootViewController:[[ListViewController alloc] init]]];
     return YES;
 }
 
