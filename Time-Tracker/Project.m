@@ -8,6 +8,12 @@
 
 #import "Project.h"
 
+@interface Project ()
+
+@property (strong, nonatomic) Entry *currentEntry;
+
+@end
+
 @implementation Project
 
 -(void)AddEntry:(Entry *)entry {
@@ -26,5 +32,17 @@
         }
     }
     self.Entries = array;
+}
+
+- (void) startNewEntry {
+    Entry *newEntry = [[Entry alloc] init];
+    newEntry.StartTime =  [NSDate new];
+    
+    self.currentEntry = newEntry;
+    
+}
+
+- (void) endCurrentEntry {
+    self.currentEntry.EndTime = [NSDate new];
 }
 @end

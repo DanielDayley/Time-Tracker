@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "DetailViewController.h"
 
 @interface ListViewController ()
 
@@ -22,6 +23,7 @@
     self.Frank = [[UITableView alloc] initWithFrame:self.view.bounds];
     
     self.Frank.dataSource = self.DataSource;
+    self.Frank.delegate = self;
     
     [self.view addSubview:self.Frank];
 }
@@ -31,14 +33,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Project *project = [ProjectController sharedInstance].Projects[indexPath.row];
+    
+    DetailViewController *viewController = [DetailViewController new];
+    
+    viewController.Project = project;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
-*/
 
 @end

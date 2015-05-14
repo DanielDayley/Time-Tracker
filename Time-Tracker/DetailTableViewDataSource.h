@@ -10,6 +10,8 @@
 #import "ProjectController.h"
 @interface DetailTableViewDataSource : UIViewController <UITableViewDataSource>
 
+@property (strong, nonatomic) Project *project;
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;

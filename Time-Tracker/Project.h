@@ -16,4 +16,9 @@
 - (void) AddEntry:(Entry *)entry;
 
 -(void) RemoveEntry:(Entry *)entry;
+
+- (void) startNewEntry;
+
+- (void) endCurrentEntry;
+
 @end

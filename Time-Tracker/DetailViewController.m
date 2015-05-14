@@ -33,6 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.dataSource.project = self.Project;
 }
 - (IBAction)titleTextFieldText:(id)sender {
 }
@@ -54,8 +56,13 @@
 - (IBAction)addButtonPressed:(id)sender {
 }
 - (IBAction)checkInPressed:(id)sender {
+    [self.Project startNewEntry];
+    [self.detailTableView reloadData];
+    
 }
 - (IBAction)checkOutPressed:(id)sender {
+    [self.Project endCurrentEntry];
+    [self.detailTableView reloadData];
 }
 - (IBAction)reportPressed:(id)sender {
 }

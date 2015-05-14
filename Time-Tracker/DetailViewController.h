@@ -10,4 +10,7 @@
 #import "DetailTableViewDataSource.h"
 @interface DetailViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, strong)DetailTableViewDataSource *dataSource;
+
+@property (strong, nonatomic) Project *Project;
+
 @end
