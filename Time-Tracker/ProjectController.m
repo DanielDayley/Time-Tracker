@@ -70,4 +70,26 @@
     return entry;
 }
 
+-(void) saveProjects {
+    NSMutableArray *array = @[];
+    
+    for (Project *i in self.Projects) {
+        NSDictionary *dictionary = [self ProjectAsDictionary:i];
+        [array addObject:dictionary];
+    }
+    [[NSUserDefaults standardUserDefaults]setObject:array forKey:@"projects"];
+}
+
+-(void) loadProject{
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"projects"];
+    NSMutableArray *projects = @[];
+    
+    for (NSDictionary *i in array) {
+        Project *newProject = [self ProjectFromDictionary:i];
+        
+        [projects addObject:newProject];
+    }
+    self.Projects = projects;
+}
+
 @end

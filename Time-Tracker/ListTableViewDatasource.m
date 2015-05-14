@@ -7,12 +7,13 @@
 //
 
 #import "ListTableViewDatasource.h"
+#import "ProjectController.h"
 
 @implementation ListTableViewDatasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 2;
+    return [[ProjectController sharedInstance].Projects count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -21,7 +22,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] init];
     }
-    cell.textLabel.text = @"I am a label for Frank";
+    cell.textLabel.text = [ProjectController sharedInstance].Projects[indexPath.row];
     
     return cell;
     
