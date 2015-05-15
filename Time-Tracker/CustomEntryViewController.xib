@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomEntryViewController">
+            <connections>
+                <outlet property="endDatePickerDate" destination="QfW-m2-f37" id="ktz-Ya-CaF"/>
+                <outlet property="startDatePickerDate" destination="ei1-Vy-lQh" id="fpo-qu-MJS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAi-HH-pQw">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <navigationItem title="Title" id="Yl3-72-4k2">
+                            <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YET-Fn-zI7">
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="-1" id="kWX-kQ-vfX"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Save" systemItem="save" id="UHr-h1-gIZ">
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="-1" id="bPA-as-RSy"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ei1-Vy-lQh">
+                    <rect key="frame" x="0.0" y="113" width="600" height="162"/>
+                    <date key="date" timeIntervalSinceReferenceDate="453336514.34620398">
+                        <!--2015-05-14 22:48:34 +0000-->
+                    </date>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Start Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26f-HU-5qp">
+                    <rect key="frame" x="261" y="65" width="78" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9e-Y3-p4s">
+                    <rect key="frame" x="265" y="343" width="71" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QfW-m2-f37">
+                    <rect key="frame" x="0.0" y="380" width="600" height="220"/>
+                    <date key="date" timeIntervalSinceReferenceDate="453336548.857279">
+                        <!--2015-05-14 22:49:08 +0000-->
+                    </date>
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="410266800">
+                        <!--2014-01-01 11:00:00 +0000-->
+                    </date>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="QfW-m2-f37" secondAttribute="bottom" id="0tH-Sq-J5B"/>
+                <constraint firstAttribute="trailing" secondItem="ei1-Vy-lQh" secondAttribute="trailing" id="4GW-iK-jea"/>
+                <constraint firstItem="26f-HU-5qp" firstAttribute="top" relation="lessThanOrEqual" secondItem="kAi-HH-pQw" secondAttribute="bottom" constant="21" id="7ed-Yg-217"/>
+                <constraint firstItem="ei1-Vy-lQh" firstAttribute="top" relation="lessThanOrEqual" secondItem="26f-HU-5qp" secondAttribute="bottom" constant="20" id="9w6-dt-VyW"/>
+                <constraint firstItem="QfW-m2-f37" firstAttribute="centerX" secondItem="ei1-Vy-lQh" secondAttribute="centerX" id="I1D-qI-XyV"/>
+                <constraint firstItem="ei1-Vy-lQh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q0Z-Y3-aOI"/>
+                <constraint firstAttribute="centerX" secondItem="e9e-Y3-p4s" secondAttribute="centerX" constant="-0.5" id="e4e-L2-fAr"/>
+                <constraint firstItem="26f-HU-5qp" firstAttribute="centerX" secondItem="ei1-Vy-lQh" secondAttribute="centerX" id="oO6-Lx-1Jw"/>
+                <constraint firstItem="26f-HU-5qp" firstAttribute="centerX" secondItem="e9e-Y3-p4s" secondAttribute="centerX" constant="-0.5" id="q7Y-aE-EBO"/>
+                <constraint firstItem="QfW-m2-f37" firstAttribute="top" secondItem="e9e-Y3-p4s" secondAttribute="bottom" constant="16" id="yaK-Zd-kYc"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

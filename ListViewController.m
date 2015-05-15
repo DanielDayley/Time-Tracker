@@ -10,38 +10,39 @@
 #import "DetailViewController.h"
 
 @interface ListViewController ()
-
 @end
 
 @implementation ListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.DataSource = [[ListTableViewDatasource alloc] init];
-    self.Frank = [[UITableView alloc] initWithFrame:self.view.bounds];
-    
-    self.Frank.dataSource = self.DataSource;
-    self.Frank.delegate = self;
-    
-    [self.view addSubview:self.Frank];
+    self.DataSource = [[listTableViewDatasource alloc] init];
+    self.listTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.listTableView.dataSource = self.DataSource;
+    self.listTableView.delegate = self;
+    [self.view addSubview:self.listTableView];
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addProject)];
+    self.navigationItem.rightBarButtonItem = addButton;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Project *project = [ProjectController sharedInstance].Projects[indexPath.row];
-    
-    DetailViewController *viewController = [DetailViewController new];
-    
-    viewController.Project = project;
-    
-    [self.navigationController pushViewController:viewController animated:YES];
+    DetailViewController *detailViewController = [DetailViewController new];
+    detailViewController.Project = project;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)addProject {
+    Project *project = [ProjectController sharedInstance].Projects[[ProjectController sharedInstance].Projects.count];
+    DetailViewController *detailViewController = [DetailViewController new];
+    detailViewController.Project = project;
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

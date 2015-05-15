@@ -27,7 +27,7 @@
     }
     Entry *entry = self.project.Entries[indexPath.row];
     NSString *label = [NSString stringWithFormat:@"%@ %@", entry.StartTime, entry.EndTime];
-    
+    entry.Name = label;
     return cell;
     
 }

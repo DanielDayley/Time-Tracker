@@ -8,9 +8,11 @@
 
 #import "DetailViewController.h"
 #import "DetailTableViewDataSource.h"
+#import "CustomEntryViewController.h"
 #import "Project.h"
+@import MessageUI;
 
-@interface DetailViewController ()
+@interface DetailViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITableView *detailTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
@@ -54,6 +56,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)addButtonPressed:(id)sender {
+    CustomEntryViewController *customEntryController = [CustomEntryViewController new];
+    customEntryController.project = self.Project;
+    [self presentViewController:customEntryController animated:YES completion:nil];
 }
 - (IBAction)checkInPressed:(id)sender {
     [self.Project startNewEntry];
@@ -65,6 +70,20 @@
     [self.detailTableView reloadData];
 }
 - (IBAction)reportPressed:(id)sender {
+    MFMailComposeViewController *mailVC = [MFMailComposeViewController new];
+    mailVC.mailComposeDelegate = self;
+    NSString *string = @"";
+    for (Entry *i in self.Project.Entries) {
+        NSString *startString = [NSString stringWithFormat:@"%@",i.StartTime];
+        NSString *endString = [NSString stringWithFormat:@"%@",i.EndTime];
+        NSString *finalString = [NSString stringWithFormat:@"%@\n%@\n",startString,endString ];
+        string = [NSString stringWithFormat:@"%@ %@", string, finalString];
+    }
+    [mailVC setMessageBody:string isHTML:NO];
+    [self presentViewController:mailVC animated:YES completion:nil];
+}
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

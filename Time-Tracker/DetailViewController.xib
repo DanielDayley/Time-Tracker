@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
@@ -22,30 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cib-A0-cYl">
-                    <rect key="frame" x="8" y="94" width="584" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="titleTextFieldText:" destination="-1" eventType="editingDidEnd" id="bmy-Y2-Isg"/>
-                        <outlet property="delegate" destination="-1" id="l9r-QG-UUF"/>
-                    </connections>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRf-kf-d0C">
-                    <rect key="frame" x="279" y="49" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J0q-PA-UQz">
-                    <rect key="frame" x="8" y="132" width="584" height="300"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J0q-PA-UQz">
+                    <rect key="frame" x="8" y="143" width="584" height="413"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="J0q-PA-UQz" secondAttribute="height" multiplier="146:75" id="VeA-kA-c2h"/>
-                    </constraints>
                 </tableView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-lO-Red">
-                    <rect key="frame" x="0.0" y="432" width="600" height="44"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-lO-Red">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <items>
                         <barButtonItem systemItem="add" id="JFY-cN-UFV">
                             <connections>
@@ -72,16 +53,28 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cib-A0-cYl">
+                    <rect key="frame" x="0.0" y="83" width="584" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="titleTextFieldText:" destination="-1" eventType="editingDidEnd" id="bmy-Y2-Isg"/>
+                        <outlet property="delegate" destination="-1" id="l9r-QG-UUF"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="cib-A0-cYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="5XO-4r-wQE"/>
-                <constraint firstItem="J0q-PA-UQz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="6hh-gu-H4Q"/>
-                <constraint firstItem="J0q-PA-UQz" firstAttribute="top" secondItem="cib-A0-cYl" secondAttribute="bottom" constant="8" id="9Ab-Zz-YIM"/>
-                <constraint firstAttribute="centerX" secondItem="cib-A0-cYl" secondAttribute="centerX" id="J7F-CU-JGw"/>
-                <constraint firstAttribute="trailing" secondItem="cib-A0-cYl" secondAttribute="trailing" constant="8" id="JPC-O7-dLd"/>
-                <constraint firstAttribute="centerY" secondItem="cib-A0-cYl" secondAttribute="centerY" constant="191" id="OPP-Z5-s6z"/>
-                <constraint firstAttribute="trailing" secondItem="J0q-PA-UQz" secondAttribute="trailing" constant="8" id="ei1-ZO-Ls5"/>
+                <constraint firstItem="E2j-lO-Red" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4un-vk-1aK"/>
+                <constraint firstAttribute="trailing" secondItem="J0q-PA-UQz" secondAttribute="trailing" constant="8" id="89P-P9-Tvt"/>
+                <constraint firstItem="J0q-PA-UQz" firstAttribute="top" relation="lessThanOrEqual" secondItem="cib-A0-cYl" secondAttribute="bottom" constant="46" id="Nfa-sZ-y6f"/>
+                <constraint firstItem="cib-A0-cYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="UEU-AY-yDq"/>
+                <constraint firstItem="J0q-PA-UQz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="lMJ-vg-blp"/>
+                <constraint firstAttribute="trailing" secondItem="cib-A0-cYl" secondAttribute="trailing" constant="8" id="mOK-Ob-Igi"/>
+                <constraint firstItem="E2j-lO-Red" firstAttribute="top" secondItem="J0q-PA-UQz" secondAttribute="bottom" id="mhV-Mr-wwz"/>
+                <constraint firstItem="cib-A0-cYl" firstAttribute="top" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="nqE-UX-kKd"/>
+                <constraint firstAttribute="bottom" secondItem="E2j-lO-Red" secondAttribute="bottom" id="oCW-qZ-Ygk"/>
+                <constraint firstAttribute="trailing" secondItem="E2j-lO-Red" secondAttribute="trailing" id="uxO-TI-cEu"/>
             </constraints>
         </view>
     </objects>

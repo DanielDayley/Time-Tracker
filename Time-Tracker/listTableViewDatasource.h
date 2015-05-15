@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ListTableViewDatasource : NSObject <UITableViewDataSource>
+@interface listTableViewDatasource : NSObject <UITableViewDataSource>
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
