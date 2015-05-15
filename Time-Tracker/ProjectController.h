@@ -14,18 +14,13 @@
 @property (strong, nonatomic) NSArray *Projects;
 
 + (instancetype) sharedInstance;
-
--(void) AddProject:(Project *)project;
-
--(void) RemoveProject:(Project *)project;
-
-- (NSDictionary *) ProjectAsDictionary:(Project *)project;
-
--(Project *)ProjectFromDictionary:(NSDictionary *)dictionary;
-
--(NSDictionary *)EntreyAsDictionary:(Entry *)entry;
-
--(Entry *)EntryFromDictionary:(NSDictionary *)dictionary;
-
+- (void) AddProject:(Project *)project;
+- (void) RemoveProject:(Project *)project;
+- (NSDictionary *) projectAsDictionary:(Project *)project;
+- (Project *)projectFromDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)entryAsDictionary:(Entry *)entry;
+- (Entry *)entryFromDictionary:(NSDictionary *)dictionary;
+- (void) saveProjects;
+- (void) loadProjects;
 
 @end

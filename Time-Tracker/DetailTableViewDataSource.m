@@ -16,18 +16,16 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.project.Entries count];
+    return [self.project.entries count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
     if (!cell) {
         cell = [[UITableViewCell alloc] init];
     }
-    Entry *entry = self.project.Entries[indexPath.row];
-    NSString *label = [NSString stringWithFormat:@"%@ %@", entry.StartTime, entry.EndTime];
-    entry.Name = label;
+    Entry *entry = self.project.entries[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", entry.startTime, entry.endTime];
     return cell;
     
 }
@@ -35,13 +33,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

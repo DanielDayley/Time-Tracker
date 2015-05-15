@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "listTableViewDatasource.h"
+#import "ListTableViewDatasource.h"
 
 @interface ListViewController : UIViewController <UITableViewDelegate>
 
-@property (strong, nonatomic) listTableViewDatasource *DataSource;
+@property (strong, nonatomic) ListTableViewDatasource *DataSource;
 
 @property (strong, nonatomic) UITableView *listTableView;
 

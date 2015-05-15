@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Project.h"
+#import "DetailTableViewDataSource.h"
 @interface CustomEntryViewController : UIViewController
 @property (strong, nonatomic) Project *project;
+@property (strong, nonatomic) DetailTableViewDataSource *dataSource;
 @end

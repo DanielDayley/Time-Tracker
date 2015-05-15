@@ -11,8 +11,8 @@
 
 @interface Project : NSObject
 
-@property (strong, nonatomic) NSArray *Entries;
-
+@property (strong, nonatomic) NSArray *entries;
+@property (strong, nonatomic) NSString *name;
 - (void) AddEntry:(Entry *)entry;
 
 -(void) RemoveEntry:(Entry *)entry;

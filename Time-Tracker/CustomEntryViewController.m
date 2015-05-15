@@ -23,8 +23,9 @@
 }
 - (IBAction)saveButtonPressed:(id)sender {
     Entry *newEntry = [Entry new];
-    newEntry.StartTime = self.startDatePickerDate.date;
-    newEntry.EndTime = self.endDatePickerDate.date;
+    newEntry.startTime = self.startDatePickerDate.date;
+    newEntry.endTime = self.endDatePickerDate.date;
+    [self.project AddEntry:newEntry];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

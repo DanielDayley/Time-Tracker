@@ -16,33 +16,46 @@
 
 @implementation Project
 
+-(instancetype)init {
+    self = [super init];
+    Entry *blankEntry = [Entry new];
+    self.entries = @[blankEntry];
+//    NSLog(@"Current Project.entries: %@",blankEntry);
+    return self;
+}
+
 -(void)AddEntry:(Entry *)entry {
-    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:self.Entries];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:self.entries];
+//    NSLog(@"'array' looks like this:  %@",array);
     [array addObject:entry];
-    self.Entries = array;
+    NSLog(@"Added entry %@ to project entries.",entry);
+    self.entries = array;
     
 }
 
 -(void)RemoveEntry:(Entry *)entry {
-    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:self.Entries];
-    for (NSInteger i = 0; i < self.Entries.count; i++) {
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:self.entries];
+    for (NSInteger i = 0; i < self.entries.count; i++) {
         if ([array[i] isEqual:entry])
         {
             [array removeObject:entry];
+            NSLog(@"Removed entry %@ from project entries.",entry);
         }
     }
-    self.Entries = array;
+    self.entries = array;
 }
 
 - (void) startNewEntry {
     Entry *newEntry = [[Entry alloc] init];
-    newEntry.StartTime =  [NSDate new];
-    
+    newEntry.startTime =  [NSDate new];
+    NSLog(@"Starting new entry %@.",newEntry);
     self.currentEntry = newEntry;
     
 }
 
 - (void) endCurrentEntry {
-    self.currentEntry.EndTime = [NSDate new];
+    self.currentEntry.endTime = [NSDate new];
+    NSLog(@"Setting end time for current entry");
+
 }
 @end

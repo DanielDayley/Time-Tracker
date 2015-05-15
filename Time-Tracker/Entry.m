@@ -10,4 +10,15 @@
 
 @implementation Entry
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.startTime = [[NSDate alloc] init];
+        self.endTime = [[NSDate alloc] init];
+        self.name = @"";
+    }
+    return self;
+}
+
 @end
